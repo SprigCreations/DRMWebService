@@ -10,7 +10,7 @@ header = xsd.Element(
                     ])
                 )
 header_value = header(serverUrl='http://localhost:5240/oracle/drm/apiadapter',sessionParams='ProductVersion=11.1.2,CultureName=en-US,TimeZoneOffset=-360')
-client = Client(wsdl='http://localhost:9000/oracle-epm-drm-webservices/DrmService?wsdl', wsse=UsernameToken('drmws', 'Welcome!'))
+client = Client(wsdl='http://localhost:9000/oracle-epm-drm-webservices/DrmService?wsdl', wsse=UsernameToken('drmws', '********'))
 response = client.service.getSysPrefs(_soapheaders=[header_value])
 dict_fndWildcard=response[0]
 print(dict_fndWildcard['name'])
