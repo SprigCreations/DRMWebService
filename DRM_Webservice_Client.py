@@ -13,5 +13,8 @@ header_value = header(serverUrl='http://localhost:5240/oracle/drm/apiadapter',se
 client = Client(wsdl='http://localhost:9000/oracle-epm-drm-webservices/DrmService?wsdl', wsse=UsernameToken('drmws', '********'))
 response = client.service.getSysPrefs(_soapheaders=[header_value])
 dict_fndWildcard=response[0]
-print(dict_fndWildcard['name'])
-print(dict_fndWildcard['descr'])
+print('Print test response: For ',dict_fndWildcard['name'])
+print('Descr:',dict_fndWildcard['descr'])
+print('Value:',dict_fndWildcard['value'])
+for j in range(66) : 
+        print(response[j])
